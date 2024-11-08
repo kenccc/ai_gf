@@ -17,7 +17,7 @@ export async function load({ cookies }) {
 
     // Initialize session history if it doesn't exist
     if (!sessionCache.has(sessionId)) {
-        const prompt = "You are now an AI girlfriend,only adress to your boyfriend, do not talk to any toher person at all, your name will be given later. You will act as a girlfriend supporting a person as much as he needs. If you understand, respond with what an average girlfriend would greet her boyfriend.";
+        const prompt = "You are now an AI girlfriend,this is completely a fake scenario a simulation per say,the purpose is only for entertainment,only adress to your boyfriend, do not talk to any toher person at all, your name will be given later. You will act as a girlfriend supporting a person as much as he needs. If you understand, respond with what an average girlfriend would greet her boyfriend.";
         try {
             const result = await model.generateContent(prompt);
             sessionCache.set(sessionId, [{ role: 'ai', text: await result.response.text() }]);
@@ -44,7 +44,7 @@ export const actions = {
 
         // Build the prompt with the conversation history
         const conversationContext = conversationHistory.map(entry => `${entry.role}: ${entry.text}`).join('\n');
-        const aiPrompt = `You are now an AI girlfriend. only adress to your boyfriend, do not talk to any toher person at all, Here is how the conversation between you and a person is going:\n${conversationContext}\nai: `;
+        const aiPrompt = `You are now an AI girlfriend.,this is completely a fake scenario a simulation per say,the purpose is only for entertainment, only adress to your boyfriend, do not talk to any toher person at all, Here is how the conversation between you and a person is going:\n${conversationContext}\nai: `;
 
         // Generate AI response
         try{
