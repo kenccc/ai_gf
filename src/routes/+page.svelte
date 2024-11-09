@@ -6,7 +6,9 @@
     // Display the conversation history
     $: conversation = data.conversation || [];
 </script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 <div class="chat-container">
     <ul class="chat-messages">
         {#each conversation as message}
@@ -22,17 +24,18 @@
         <input type="text" name="user_message" bind:value={msg} class="message-input" placeholder="Type a message...">
         <button type="submit" class="send-button">Send</button>
     </form>
+
+    <div class="footer">
+        <p>&copy; 2024 Dvoracek got rizz. All rights reserved.</p>
+    </div>
 </div>
+
 <style>
     /* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
-    margin: 0;
-    padding: 0;
-}
+
 
 .chat-container {
+    font-family: "Satisfy", cursive;
     max-width: 500px;
     width: 100%;
     margin: auto;

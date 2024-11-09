@@ -61,5 +61,6 @@ export const actions = {
             conversationHistory.push({ role: 'ai', text: "sorry bae im on my period" });
             sessionCache.set(sessionId, conversationHistory);
         }
-    }
+    },
+
 };
